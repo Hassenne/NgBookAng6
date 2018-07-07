@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">Login</div>
+        <div class="panel-body">
+          <form class="form-horizontal" #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <div class="form-group">
+              <label for="email" class="control-label col-md-4">E-mail Address</label>
+
+              <div class="col-md-6">
+                <input type="email"  name="email" #email="ngModel" ngModel  class="form-control" email required>
+                <p class=" text-danger" *ngIf="email.errors?.required && email.touched">The email is required</p>
+                <p class=" text-danger" *ngIf="email.errors?.email && email.touched">The email is type email</p>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password" class="col-md-4 control-label">Password</label>
+
+              <div class="col-md-6">
+                <input type="password" #password="ngModel" ngModel name="password" minlength="6" class="form-control" required>
+                <p class=" text-danger" *ngIf="password.errors?.required && password.touched">The password is required</p>
+                <p class=" text-danger" *ngIf="password.errors?.minlength && password.touched">The password must be langer than 6 charcters</p>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-8 col-md-offset-4">
+                <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+                  Login
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
