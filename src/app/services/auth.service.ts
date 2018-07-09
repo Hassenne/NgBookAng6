@@ -58,4 +58,15 @@ export class AuthService {
 
         this.router.navigate(['/dashboard'])
     }
+
+    isloggedIn(): boolean {
+
+        let token = localStorage.getItem('token')
+
+        let user = localStorage.getItem('user')
+
+        if (user && token) return true
+
+        return false
+    }
 }
