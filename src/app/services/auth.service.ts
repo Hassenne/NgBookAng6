@@ -12,6 +12,17 @@ export class AuthService {
 
     constructor (private http: HttpClient, private router: Router, private notifyService: NotifyService) {}
 
+    getAuthUser(): User {
+        return JSON.parse(localStorage.getItem('user'))
+    }
+
+    getToken(): string {
+        return localStorage.getItem('token')
+    }
+
+    getAuthUserId(): number {
+        return JSON.parse(localStorage.getItem('user')).id
+    }
     register (name: string, email: string, password: string): Promise<UserData> {
         
         return this.http.post<any>(CONFIG.API_URL+'/register', {name: name, email: email, password: password})

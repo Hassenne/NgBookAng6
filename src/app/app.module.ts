@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+//import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -15,6 +16,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { AuthedGuard } from './guards/authed.guard';
 import { NotifyComponent } from './notify/notify.component';
 import { NotifyService } from './services/notify.service';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { NotifyService } from './services/notify.service';
     RegisterComponent,
     DashboardComponent,
     LoginComponent,
-    NotifyComponent
+    NotifyComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
