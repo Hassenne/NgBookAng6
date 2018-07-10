@@ -69,4 +69,11 @@ export class AuthService {
 
         return false
     }
+
+    logout() {
+
+        localStorage.removeItem('token')
+        localStorage.removeItem('user')
+        this.router.navigate(['/auth/login'])
+    }
 }
